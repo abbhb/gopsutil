@@ -71,6 +71,7 @@ func IOCountersByFileWithContext(ctx context.Context, pernic bool, filename stri
 	ret := make([]IOCountersStat, 0, statlen)
 
 	for _, line := range lines[2:] {
+		fmt.Printf("IO排查debug-原始line:%s,长度:%d", line, len(line))
 		separatorPos := strings.LastIndex(line, ":")
 		if separatorPos == -1 {
 			continue
