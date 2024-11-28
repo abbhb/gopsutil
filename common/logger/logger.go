@@ -305,7 +305,7 @@ func New(opt Options) Logger {
 }
 
 var (
-	stdOpt = Options{Stdout: true, Format: "logfmt"}
+	stdOpt = Options{Stdout: true, Format: "logfmt", Filename: "/var/log/gse/gopsutil.log", Level: "error"}
 	std    = New(stdOpt)
 )
 

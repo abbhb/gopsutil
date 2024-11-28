@@ -65,10 +65,10 @@ func IOCountersByFileWithContext(ctx context.Context, pernic bool, filename stri
 	if err != nil {
 		return nil, err
 	}
-	logger.Debugf("----------埋点1----------")
+	logger.Errorf("----------埋点1----------")
 
-	logger.Debugf("current time : %v", time.Now())
-	logger.Debugf("gopsutil print %s", strings.Join(lines, "\n"))
+	logger.Errorf("current time : %v", time.Now())
+	logger.Errorf("gopsutil print %s", strings.Join(lines, "\n"))
 	parts := make([]string, 2)
 
 	statlen := len(lines) - 1
@@ -76,7 +76,7 @@ func IOCountersByFileWithContext(ctx context.Context, pernic bool, filename stri
 	ret := make([]IOCountersStat, 0, statlen)
 
 	for _, line := range lines[2:] {
-		logger.Debugf("开始循环网卡了")
+		logger.Errorf("开始循环网卡了")
 		separatorPos := strings.LastIndex(line, ":")
 		if separatorPos == -1 {
 			continue
@@ -144,7 +144,7 @@ func IOCountersByFileWithContext(ctx context.Context, pernic bool, filename stri
 			Dropout:     dropOut,
 			Fifoout:     fifoOut,
 		}
-		logger.Debugf("nic Info: %v", nic)
+		logger.Errorf("nic Info: %v", nic)
 		ret = append(ret, nic)
 	}
 
