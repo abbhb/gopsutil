@@ -10,7 +10,9 @@ require (
 	github.com/stretchr/testify v1.8.4
 	github.com/tklauser/go-sysconf v0.3.12
 	github.com/yusufpapurcu/wmi v1.2.3
+	go.uber.org/zap v1.27.0
 	golang.org/x/sys v0.11.0
+	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 )
 
 retract v3.22.11
